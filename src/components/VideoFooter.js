@@ -1,12 +1,11 @@
 import { FcMusic } from "react-icons/fc";
 import Ticker from "react-ticker";
-
-export default function VideoFooter() {
+export default function VideoFooter({ channel, description, song }) {
   return (
     <div className="relative text-white bottom-[120px] ml-4 flex">
       <div className="flex-1">
-        <h1 className="pb-[12px] ">@Nardos_Tsegae</h1>
-        <p className="pb-[20px] text-[10px]">Showing of development setup</p>
+        <h1 className="pb-[12px] ">@{channel}</h1>
+        <p className="pb-[20px] text-[10px]">{description}</p>
         {/* videoFooter_ticker */}
         <div className="h-fit ml-8 w-[60%]">
           {/* videoFooter_icon */}
@@ -14,7 +13,7 @@ export default function VideoFooter() {
           <Ticker mode="smooth">
             {({ index }) => (
               <>
-                <p>a windows mac</p>
+                <p>{song}</p>
               </>
             )}
           </Ticker>

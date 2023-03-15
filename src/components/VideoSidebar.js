@@ -2,7 +2,8 @@ import { useState } from "react";
 import { MdOutlineFavoriteBorder, MdOutlineFavorite } from "react-icons/md";
 import { AiFillMessage } from "react-icons/ai";
 import { CgShare } from "react-icons/cg";
-export default function VideoSidebar() {
+
+export default function VideoSidebar({ likes, messages, shares }) {
   const [liked, setLiked] = useState(false);
   return (
     //   VideoSidebar
@@ -14,15 +15,15 @@ export default function VideoSidebar() {
         ) : (
           <MdOutlineFavoriteBorder onClick={() => setLiked(true)} />
         )}
-        <p className="text-[12px]">{liked ? 101 : 100}</p>
+        <p className="text-[12px]">{likes}</p>
       </div>
       <div className="p-4 flex flex-col gap-1 items-center">
         <AiFillMessage />
-        <p className="text-[12px]">345</p>
+        <p className="text-[12px]">{messages}</p>
       </div>
       <div className="p-4 flex flex-col gap-1 items-center">
         <CgShare />
-        <p className="text-[12px]">201</p>
+        <p className="text-[12px]">{shares}</p>
       </div>
     </div>
   );
